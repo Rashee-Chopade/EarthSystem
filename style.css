@@ -1,0 +1,210 @@
+ body {
+     margin: 0;
+     height: 100vh;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     background-color: black;
+     overflow: hidden;
+ }
+
+ .container {
+     font-size: 10px;
+     width: 40em;
+     height: 40em;
+     position: relative;
+ }
+
+ .sun{
+    position: absolute;
+    top: 15em;
+    left: 15em;
+    width: 10em;
+    height: 10em;
+    background-color: yellow;
+    border-radius: 50%;
+    box-shadow: 0 0 3em white;
+}
+ .earth,
+ .moon {
+     position: absolute;
+     border-style: solid;
+     border-color: white transparent transparent transparent;
+     border-width: 0.1em 0.1em 0 0;
+     border-radius: 50%;
+ }
+
+ .earth {
+     top: 5em;
+     left: 5em;
+     width: 30em;
+     height: 30em;
+     animation: orbit 36.5s linear infinite;
+ }
+
+ .moon {
+     top: 0;
+     right: 0;
+     width: 8em;
+     height: 8em;
+     animation: orbit 2.7s linear infinite;
+ }
+
+ .venus {
+     top: 3em;
+     left: 3em;
+     width: 1em;
+     height: 1em;
+     animation: orbit 50.5s linear infinite;
+ }
+
+ .earth::before,
+ .moon::before,
+ .venus::before {
+     content: "";
+     position: absolute;
+     border-radius: 50%;
+ }
+
+ .earth::before {
+     top: 2.8em;
+     right: 2.8em;
+     width: 3em;
+     height: 3em;
+     background-color: aqua;
+ }
+
+ .moon::before {
+     top: 0.8em;
+     right: 0.2em;
+     width: 1.2em;
+     height: 1.2em;
+     background-color: silver;
+ }
+
+ .venus::before {
+     top: 0.8em;
+     right: 0.2em;
+     width: 1.2em;
+     height: 1.2em;
+     background-color: red;
+ }
+
+ @keyframes orbit {
+     to {
+         transform: rotate(360deg);
+     }
+ }
+
+ .meteors span {
+     position: absolute;
+     top: 50%;
+     left: 50%;
+     width: 1em;
+     height: 1em;
+     background: #fff;
+     border-radius: 50%;
+     box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.1),
+         0 0 0 8px rgba(255, 255, 255, 0.1),
+         0 0 0 20px rgba(255, 255, 255, 1);
+     /* animation: meteor 10s linear infinite; */
+ }
+
+ .meteors span::before {
+     content: ' ';
+     position: absolute;
+     top: 50%;
+     transform: translateY(-50%);
+     width: 300px;
+     height: 1px;
+     border-radius: 50%;
+     background: linear-gradient(90deg, #fff, transparent);
+     z-index: 999;
+}
+
+@keyframes meteor {
+     0% {
+         transform: rotate(315deg) translateX(0);
+         opacity: 1;
+     }
+
+     70% {
+         opacity: 1;
+     }
+
+     100% {
+         transform: rotate(315deg) translateX(-1000px);
+         opacity: 0;
+     }
+}
+
+.meteors span:nth-child(1){
+    top: 100px;
+    right: 0;
+    animation-delay: 0;
+    animation-duration: 1s;
+}
+.meteors span:nth-child(2){
+    top: 0;
+    right: 0px;
+    left: initial;
+    animation-delay: -0.2s;
+    animation-duration: 3s;
+}
+.meteors span:nth-child(3){
+    top: 80px;
+    right: 0;
+    left: initial;
+    animation-delay: 0.4s;
+    animation-duration: 2s;
+}
+
+.meteors span:nth-child(4){
+    top: 0px;
+    right: 180px;
+    left: initial;
+    animation-delay: 0.6s;
+    animation-duration: 1.5s;
+}
+.meteors span:nth-child(5){
+    top: 0px;
+    right: 600px;
+    left: initial;
+    animation-delay: 0.8s;
+    animation-duration: 2.5s;
+}
+.meteors span:nth-child(6){
+    top: 300px;
+    right: 0;
+    left: initial;
+    animation-delay: 1s;
+    animation-duration: 3s;
+}
+.meteors span:nth-child(7){
+    top: 300px;
+    right: 0;
+    left: initial;
+    animation-delay: 1.2s;
+    animation-duration: 1.7s;
+}
+.meteors span:nth-child(8){
+    top: 0;
+    right: 700px;
+    left: initial;
+    animation-delay: 1.4s;
+    animation-duration: 1.25s;
+}
+.meteors span:nth-child(9){
+    top: 0;
+    right: 1000px;
+    left: initial;
+    animation-delay: 0.75s;
+    animation-duration: 2.25s;
+}
+.meteors span:nth-child(10){
+    top: 0;
+    right: 450px;
+    left: initial;
+    animation-delay: 2.75;
+    animation-duration: 2.25s;
+}
